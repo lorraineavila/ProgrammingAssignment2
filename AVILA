@@ -1,0 +1,21 @@
+fprintf("Hello! This program will convert the measurement provided in inches to \n");
+fprintf("a) feet \n");
+fprintf("b) yard \n");
+fprintf("c) centimeter \n");
+fprintf("d) meter \n");
+
+%inputs
+seconds= input("Enter the value of the data in seconds \n");
+%Conversion of  to feet
+feet = seconds / 12;
+fprintf("a) inches to feet = %0f feet \n", feet );
+%Conversion of inches to yard
+yard = inches / 36;
+fprintf("b) inches to yard = %.2f yard \n", yard);
+%Conversion of inches to centimeter
+centimeter = inches * 2.54;
+fprintf("c) inches to centimeter = %.2f centimeter \n", centimeter);
+%Conversion of inches to meter
+meter = inches / 39.37;
+fprintf("d) inches to meter = %.2f meter \n", meter);
+fprintf("Here are the conversions! Thank you!");
