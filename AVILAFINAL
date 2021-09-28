@@ -1,0 +1,25 @@
+## ANGELA LORRAINE AVILA
+
+makeCacheMatrix <- function(x = matrix()) { ## THIS IS USED TO MAKE CACHE
+  inv <- NULL ## EMPTY MTX
+  get <- function() x ## THIS IS USES TO GET FUNCTION
+  set <- function(y) { ## SET IT 
+    x <<- y ##INV MTX
+    inv <<- NULL ##FOR U=INVERSE MATRIX
+  }
+  getinv <- function() inv ## SET FUNCTION
+  setinv <- function(inverse) inv <<- inverse
+  list(get=get, set=set, getinv=getinv, setinv=setinv) ##MATRIX OF MATRIX
+}
+cacheSolve <- function(x, ...) { ## SOLVING THE INVERSE MATRIX
+  inv <- x$getinv() ##FUNCTION FOR INVERSE MATRIX
+  if (!is.null(inv)) {
+    message("inverse is cached") ## RESULT
+    return(inv) ## RETURN TO INVERSE 
+  }
+  m <- x$get() ## GET INVERSE
+  inv <- solve(m, ...) ## SOLVE MATRIX
+  x$setinv(inv)
+  return(inv) ## RETURN TO INVERSE FUNCTION
+}
+## THIS IS USED TO SOLVE FOR THE INVERSE MATRIX USING THE PROGRAM RSTUDIO
